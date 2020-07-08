@@ -1,0 +1,6 @@
+
+*.pyd
+*.dll
+*.exe
+ProblemSolving/
+.idea/workspace.xml
