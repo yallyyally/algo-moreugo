@@ -98,3 +98,50 @@ print(f'{hello:~>10}')
 #~~hello!~~
 #~~~~hello!
 
+#문자열 함수들
+##1. 문자 개수 세기(count) - 해당 문자가 몇개 있는지
+print(hello.count('l')) #2
+print(hello.count('llo'))#1 //substr 문자열도 가능!
+print(hello.count('x'))#존재하지 않는다면 0 반환
+
+##2.위치 알려주기(find) -0부터 시작
+print(hello.find('l'))#2
+print(hello.find('o!'))#4
+print(hello.find('sdf'))#존재하지 않는다면 -1 반환
+
+##3.위치 알려주기2(index)
+print(hello.index('l'))#2
+print(hello.index('o!'))#4
+#print(hello.index('sddf'))#존재하지 않는다면 에러!!!!!
+
+##4.문자열 삽입(join)
+print("!".join(hello)) #Hello! -> H!e!l!l!o!! 사이사이에 추가
+###리스트에 적용하기
+print('!'.join(['a','b','c']) )#a!b!c
+
+##5.소문자를 대문자로 바꾸기(upper)
+print(hello.upper()) #HELLO!
+
+##6.대문자를 소문자로 바꾸기(lower)
+print(hello.lower()) #hello!
+
+hi="    h   i i i   "
+##7.왼쪽 공백 지우기(lstrip)
+print(hi.lstrip()) #h   i i i
+
+##8.오른쪽 공백 지우기(rstrip)
+print(hi.rstrip()) #     h   i i i
+
+##9.양쪽 공백 지우기(strip)
+print(hi.strip())#h  i i i
+
+##10.문자열 바꾸기(replace)
+print(hello.replace("lo","l"))#Hello! -> Hell!
+
+##11.문자열 나누기(split) 문자열 -> 리스트
+hello=hello+' monster how are you?'
+##디폴트 토큰은 공백 ' '
+print(hello.split()) #['Hello!','monster','how','are','you?']
+print(hello.split(' '))#['Hello!','monster','how','are','you?
+print(hello.split('!'))#['Hello','monster how are you?']
+
