@@ -4,3 +4,5 @@
 *.exe
 ProblemSolving/
 .idea/workspace.xml
+*.xml
+*.iml
