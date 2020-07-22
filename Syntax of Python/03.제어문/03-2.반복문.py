@@ -38,4 +38,24 @@ while True:
         break
     i=i+1
 
+#3. 중첩 반복문(2중 for문)
+for i in range (5):
+    print('i: ',i,sep='i와i사이',end='i끝')
+    #정수랑 문자열 같이 출력하는 방법 유의
+    for j in range(5):
+        print('j: ',j,sep='j와 j 사이',end='j끝')
+    print()
 
+##별찍기(12345)
+for i in range(5): #0~4
+    for j in range(i+1): #0 ~1 미만, 2미만,..,5미만
+        print('*',end=' ')
+    print()
+
+print('============')
+
+##별찍기(54321)
+for i in range(5): #0~4
+    for j in range(5-i): #0~5미만, .. 0~1미만
+        print('*',end=' ')
+    print()
