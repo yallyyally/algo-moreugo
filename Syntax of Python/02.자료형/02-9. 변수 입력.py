@@ -6,7 +6,7 @@ print(a)
 
 a,b = input("숫자 2개를 입력하세요").split()
 #a,b = map(int,input("숫자 입력").split())
-# #map(원하는 자료형, 자료 값) = 입력할 변수
+#map(원하는 자료형, 자료 값) = 입력할 변수
 #공백 기준으로 구분
 print(type(a)) #class 'str'
 a= int(a)
