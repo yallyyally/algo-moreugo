@@ -28,3 +28,16 @@ print(a)
 [a,b]=['python','life']
 a,b=b,a
 print(a)
+
+#값 지정하기
+a,b,c=1,2,3
+print (a,b,c)
+#3 2 1
+a,b,c = c,a,b
+print(a,b,c)
+#3 1 2
+print (a,b,c, sep = ' * ')
+#3 * 1 * 2
+print (a,b,c, sep ='\n')
+print (a, end = ' end')
+#3 end
