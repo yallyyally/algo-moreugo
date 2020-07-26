@@ -41,7 +41,8 @@ print('I ate %d apples for %s days.'%(5,'rest'))
 #I ate 5 apples for rest days.
 ####인덱스와 이름 혼용
 print('I ate {0} apples for {days} days'.format(5,days='rest'))#I ate 5 apples for seven days
-
+print('I ate {} apples for {} days'.format(5,'rest'))#I ate 5 apples for seven days
+####인덱스 생략 ㄱㄴ
 #소수점 표현하기
 y=3.1415926
 print('원주율: {0:0.4f} {1:0.2f}'.format(y,y))
@@ -145,3 +146,37 @@ print(hello.split()) #['Hello!','monster','how','are','you?']
 print(hello.split(' '))#['Hello!','monster','how','are','you?
 print(hello.split('!'))#['Hello','monster how are you?']
 
+#12. 리스트로 접근
+for x in hello:
+    print(x,end='*')
+print()
+
+##대문자만 출력
+for x in hello:
+    if x.isupper():
+        print(x,end=' ')
+print()
+
+##소문자만 출력
+for x in hello:
+    if x.islower():
+        print(x,end=' ')
+print()
+
+##공백 제외 출력
+for x in hello:
+    if x.isalpha():
+        #문자만 출력,기호는 출력 x
+        #번외: isdigit는 숫자만 출력
+        print(x,end='')
+print()
+
+##아스키 코드 출력
+for x in hello:
+        print(ord(x))
+print()
+
+##아스키코드 -> 문자 출력
+tmp=65
+print(chr(tmp))
+print()
