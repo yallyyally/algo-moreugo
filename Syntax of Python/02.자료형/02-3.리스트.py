@@ -239,7 +239,34 @@ for x in a:
     if(str(type(x)))=="<class 'str'>":
         x = ord(x)
     print(x, type(x))
-alla(a)
+# alla(a)
 
 int_list = [1,61,3,4,5]
 anya(int_list)
+
+#2차원 리스트 생성과 접근
+a.clear()
+a = [0]*10
+print(a) #1*10  행렬
+#[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+a.clear()
+a = [[0]*3 for _ in range(3)] #변수 없이 반복할때
+print(a)
+#[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+for x in a:
+    print(x)
+
+# [0, 0, 0]
+# [0, 0, 0]
+# [0, 0, 0]
+
+for x in a:
+    for y in x:
+        print(y,end = ' ')
+    print()
+
+# 0 0 0
+# 0 0 0
+# 0 0 0
