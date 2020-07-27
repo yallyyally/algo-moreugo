@@ -188,6 +188,7 @@ print(type(enumerate(sentence)))
 
 for x in enumerate(sentence):
     print(x)
+    #print(x[0],x[1]) # -> 0 a ....
 print()
 '''
 (0, 'a')
@@ -213,3 +214,32 @@ index:4, value:e
 index:5, value:f
 index:6, value:g
 '''
+a = list(set(a))
+a.pop(a.index('df'))
+
+def alla(a):
+    #반복 + 조건 ( && && && ..)
+    if all(60<x for x in a):
+    #다~참이여야 해당 조건문이 참
+        print("YES")
+    else:
+        print("NO ")
+
+
+#전역이랑 지역이랑 섞어서 쓰면 안됨.a는 X/ 에러: GIL - 하나의 THREAD만이 하나의 자원에 접근 ㄱㄴ
+def anya(list):
+    if any(60<x for x in list):
+        print("YES")
+    else:
+        print("NO")
+#int_list 선언 안하면 실행시키기도 전에 에러남..
+
+#문자 ->정수로 변환: 타임 비교 확인
+for x in a:
+    if(str(type(x)))=="<class 'str'>":
+        x = ord(x)
+    print(x, type(x))
+alla(a)
+
+int_list = [1,61,3,4,5]
+anya(int_list)
