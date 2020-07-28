@@ -10,8 +10,13 @@ print(plus_one(2)) #3
 print(plus_one_lamda(3)) #5
 
 #유용할 때 : 내장함수의 인자로 사용될 경우
-#map: (함수명, 자료_리스트)
+#map: (함수명, 자료) -> 자료는 iterable한 객체 (리스트, 튜플)만 가능
 a=[1,2,3]
+b=(1,2,3)
 print(list(map(plus_one,a)))
 print(list(map(lambda x:x+1,a)))
+print(map(plus_one,b))
+
 #[2,3,4]
+#list화 안하면 -><map object at 0x0000027D45872DD8>
+
