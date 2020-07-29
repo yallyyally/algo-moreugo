@@ -2,6 +2,7 @@
 #수학성적 평균과 가장 가까운 학생 번호 구하기
 #답이 두개 ->높은 학생
 #답이 여러개 -> 번호가 빠른 학생
+#잊지말자 sum,,
 
 N = int(input())
 scores = list(map(int,input().split()))

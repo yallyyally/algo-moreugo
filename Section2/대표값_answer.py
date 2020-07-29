@@ -5,45 +5,29 @@
 
 N = int(input())
 scores = list(map(int,input().split()))
-avg=0
-
+min=2147000000 #정수 최대값
 #평균구하기
-for i in scores:
-    avg += i
+# for i in scores:
+#     avg += i
 
-avg = round(avg/len(scores),0)
+#sum 메소드 잊지 말자..!! + 변수도,,
+avg = round(sum(scores)/N)
 
-#round(p,q) : p를 q까지 반올림
-# math.ceil(i) : 올림
-# math.floor(i) : 내림
-# math.trunc(i) : 버림
+#enumerate 잊지 말자,,->(인덱스, 값) 튜플형태로 출력하도록 함.
+for number,score in enumerate(scores):
+    diff= abs(avg-score)
+    #작을 때
+    if diff<min:
+        min=diff
+        score_nearavg=score
+        #번호, 점수,차이 저장
+        ans=number+1
+    #같을 때
+    elif diff==min:
+        #점수가 큰 학생걸로. -> 점수가 같으면 자동으로 앞에 학생 적용
+        if score>score_nearavg:
+            score_nearavg=score
+            ans=number+1
+        #굳이 두번 정렬할 필요 없도록..
 
-#평균과 가까운 학생
-#numbers list 만듦 -> 소팅.
-# 다 돌렸을때 크기가 1이면 그 점수
-# 크기가 2이상인데 다 같은거 ->번호 빠름
-#크기가 2 이상인데 다름 -> 큰거(>번호빠른거)
-diff= abs(avg-scores[0])
-#(번호,점수) tuple로 이루어진 list
-near_avg=[(1,scores[0])]
-
-for i in range(1,len(scores)):
-    #같은 경우 list에 추가
-    if abs(avg-scores[i])==diff:
-        near_avg.append((i+1,scores[i]))
-    #더 작은 경우 list 초기화 후 추가
-    elif abs(avg-scores[i])<diff:
-        near_avg.clear()
-        near_avg.append((i+1,scores[i]))
-        diff=abs(avg-scores[i])
-
-print("%d"%avg,end=' ')
-#점수가 다 같으면 빠른 번호
-if near_avg[0][1]==near_avg[len(near_avg)-1][1]:
-    print(near_avg[0][0])
-else: #번호 먼저
-    near_avg=sorted(near_avg,key=lambda x:x[0])
-    #성적 그 다음(우선순위 높음)
-    near_avg.sort(reverse=True,key=lambda x:x[1])
-    #2차원 배열
-    print(near_avg[0][0])
+print(avg,ans)
