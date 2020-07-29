@@ -11,8 +11,10 @@ min=2147000000 #정수 최대값
 #     avg += i
 
 #sum 메소드 잊지 말자..!! + 변수도,,
-avg = round(sum(scores)/N)
-
+# avg = round(sum(scores)/N)
+avg = int(sum(scores)/N+0.5)
+# round_half_up ->0.5부터 올림
+# round_half_even ->0.5000(0.511말고)에 있을때 짝수로 근삿값:4.5->4
 #enumerate 잊지 말자,,->(인덱스, 값) 튜플형태로 출력하도록 함.
 for number,score in enumerate(scores):
     diff= abs(avg-score)
