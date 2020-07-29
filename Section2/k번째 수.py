@@ -8,6 +8,7 @@ def KthNum():
     numbers=list(map(int,input().split()))
     #s~e만 소팅
     numbers_filtered = numbers[s-1:e]
+    #그냥 numbers에 바로 넣어주면 공간도 절약하고 좋음.
     numbers_filtered.sort()
     return numbers_filtered[k-1]
 
@@ -23,4 +24,6 @@ for i in range(T):
 
 for i in range(T):
     print("#",i+1,' ',answers[i])
+    #바로바로 출력해줘도 되는거였음..
+    #print("#%d %d" %(i+1, answers[i]))
 
