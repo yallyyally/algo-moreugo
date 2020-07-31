@@ -14,7 +14,7 @@ if M<=N:
 cnt=[0]*(N+M+3)
 
 #i - N면체, j-M면체
-#일단 다 계산하기
+#일단 다 계산하기->인덱스에 넣기
 for i in range(1,N+1):
     for j in range(1,M+1):
         cnt[i+j] +=1
