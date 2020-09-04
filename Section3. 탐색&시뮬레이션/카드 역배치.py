@@ -1,7 +1,7 @@
 #카드 역배치
 #정해진 구간(s,e)만큼 역정렬,
-import sys
-sys.stdin = open("input.txt", "r")
+# import sys
+# sys.stdin = open("input.txt", "r")
 
 def makeReverse(arr,s,e):
     arr2 = arr[s-1:e]
