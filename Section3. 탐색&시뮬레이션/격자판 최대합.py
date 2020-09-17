@@ -1,5 +1,10 @@
-N = int(input())
-#N*N 격자판
-board =[]
+import sys
+#행, 열, 대각선 ->열 -> 열,대각선
+#행, 행,행, 행
+
+N = int(sys.stdin.readline())
+board = []
 for i in range(N):
-    board[i] = list(map(input().split()))
+    board.append([])
+print(board)
+#for i in range()
