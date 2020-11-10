@@ -1,4 +1,4 @@
-﻿import sys
+import sys
 
 #sys.stdin = open("in3.txt","rt")
 #finding between 1~max => through binary search.
