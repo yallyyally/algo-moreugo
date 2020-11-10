@@ -6,3 +6,7 @@ ProblemSolving/
 .idea/workspace.xml
 *.xml
 *.iml
+.vs/Algorithm/v16/.suo
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
