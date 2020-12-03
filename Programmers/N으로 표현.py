@@ -27,3 +27,4 @@ def solution(N, number):
         answer = -1
         
     return answer
+    
