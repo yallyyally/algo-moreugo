@@ -3,7 +3,7 @@
 def solution(tickets):
 routes = {}
 for t in tickets:
-    routes[t[0]] = routes.get(t[0],[]) [t[1]] #리스트 병합
+    routes[t[0]] = routes.get(t[0],[]) + [t[1]] #리스트 병합
 
 for r in routes: 
     #r은 routes 에 속한 키들임
