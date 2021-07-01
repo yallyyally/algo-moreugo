@@ -1,29 +1,19 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.StringTokenizer;
+import java.util.*;
 
 class Solution {
 //	쿼리 - 점수 목록
-	static HashMap<String, int[]> map;
-	static HashMap<String, Integer> idxMap; // int[] 배열의 인덱스 관리
+	static HashMap<String, ArrayList<Integer>> map;
 
 	static int infoLen;
 
 	public static void updateScoreArr(String info, int score) {
-		int[] arr;
-		int idx;
 //		배열 생성
 		if (map.get(info) == null) {
-			map.put(info, new int[infoLen]);
-			idxMap.put(info, 0);
+			map.put(info,new ArrayList<>());
 		}
 		
-		arr = map.get(info);
-		idx = idxMap.get(info);
+		map.get(info).add(score);
 
-//		배열에 점수 넣어주고, 인덱스 증가
-		arr[idx] = score;
-		idxMap.put(info, idx + 1);
 	}
 
 	public static void insertKey(String lang, String field, String experience, String food, int score) {
@@ -51,20 +41,21 @@ class Solution {
 	public int getResult(String key, int score) {
 		if(map.get(key) == null)
 			return 0;
-		int[] arr = Arrays.copyOfRange(map.get(key), 0, idxMap.get(key));
 		
 		int start = 0;
-		int end = arr.length - 1;
+        ArrayList<Integer> arr = map.get(key);
+        int arrSize = arr.size();
+		int end = arrSize - 1;
 		int res = 0;
-//		일단 정렬
-		Arrays.sort(arr);
-		
+        
+
 		while(start <= end) {
+
 			int middle = (start + end) / 2;
-			if(arr[middle] < score)
+			if(arr.get(middle) < score)
 				start = middle + 1;
 			else {
-				res = end - start + 1;
+				res = arrSize - middle;
 				end = middle - 1;
 			}
 		}
@@ -81,7 +72,6 @@ class Solution {
 	public int[] solution(String[] info, String[] query) {
 		StringTokenizer st;
 		map = new HashMap<>();
-		idxMap = new HashMap<>();
 
 		infoLen = info.length;
 		int queryLen = query.length;
@@ -101,7 +91,11 @@ class Solution {
 			insertKey(lang, field, experience, food, score);
 
 		}
-		
+		//		일단 정렬 ////이거 getResult에서 해주면 터짐
+        // 이유 ? query가 10만이고 map 에 올 수 있는 가짓수는 3*3*3*3 = 81 이라서 중복되는 쿼리가 생김.
+        for(String str : map.keySet()){
+            Collections.sort(map.get(str));
+        }
 		
 //		쿼리 파싱
 		for (int q = 0; q < queryLen; q++) {
@@ -114,6 +108,7 @@ class Solution {
 
 		return answer;
 	}
+	
 
 
 }
