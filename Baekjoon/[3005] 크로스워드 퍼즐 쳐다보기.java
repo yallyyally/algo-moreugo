@@ -7,7 +7,6 @@ import java.util.*;
 class Main{
 	static int R, C;
 	static String res;
-	boolean init;
 	
 	public static void scanPuzzle(char[][] arr) {
 		int row = arr.length;
